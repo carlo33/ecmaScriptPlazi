@@ -16,7 +16,7 @@ NewFunction2('Ricardo', 23, 'CO')
 //anterior forma de unir dos strings
 let hello = "Hello";
 let world = "wordl";
-let epicPharse = hello + ' ' + worold;
+let epicPharse = hello + ' ' + world;
 console.log(epicPharse);
 // Nueva forma de unir dos strings
 let epicPharse2 = `${hello} ${world}`;
