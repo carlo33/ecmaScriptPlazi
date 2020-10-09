@@ -65,7 +65,7 @@ console.log(obj2);
 ///FUNCIONES DE TIPO FLECHA (arrow function)
 const names = [
   {name:'carlos',age:34},
-  {name: 'judith', age:31}
+  {name: 'Julio', age:31}
 ] 
 //anterior
 let listOfNames = names.map (function (item){
@@ -85,11 +85,43 @@ const helloPromise = () =>{
     }else {
       reject ('Ups');
     }
-  })
+  });
 }
 
 helloPromise()
   .then(response => console.log(response))
   .catch(error => console.log(error))
 
-///CLASES
+///CLASES tiene un constructor y un metodo
+class calculator {
+  constructor(){
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum (valueA, valueB){
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+const calc = new calculator(); 
+console.log(calc.sum(2,2));
+
+///IMPORT - EXPORT  
+import { hello } from './module';
+hello();
+
+///GENERATOR
+function* helloWorld(){
+  if (true){
+    yield 'Hello';
+  }
+  if (true){
+    yield 'world';
+  }
+};
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+///////ES7
