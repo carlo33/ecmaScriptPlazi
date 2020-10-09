@@ -1,4 +1,4 @@
-//////PARAMETROS POR DEFECTO
+////PARAMETROS POR DEFECTO
 //antes
 function NewFunction(name, age, country){
   var name = name || 'Oscar';
@@ -7,7 +7,7 @@ function NewFunction(name, age, country){
   console.log(name, age, country);
 }
 
-// ES6
+//ES6
 function NewFunction2(name = 'Oscar', age = 32, country = "MX"){
  console.log(name, age, country);
 } 
@@ -15,7 +15,7 @@ function NewFunction2(name = 'Oscar', age = 32, country = "MX"){
 NewFunction2();
 NewFunction2('Ricardo', 23, 'CO')
 
-///TEMPLATE LITERAL  para unir varios elementos
+////TEMPLATE LITERAL  para unir/separar varios elementos
 //anterior 
 let hello = "Hello";
 let world = "wordl";
@@ -25,17 +25,17 @@ console.log(epicPharse);
 let epicPharse2 = `${hello} ${world}`;
 console.log(epicPharse2);
 
-///MULTILINEA
+////MULTILINEA
 //anterior
 let lorem = "Esta es una  frase epica que escribimos desde livitaca\n"
-+" esta es otra frase epica";
++"esta es otra frase epica";
 console.log(lorem);
 //ES6
 let lorem2 = `esta es una  mejor forma de escribir 
 una frase epica desde el frio de livitaca`;
 console.log(lorem2);
 
-///ESTRUCTURACION DE ELEMENTOS
+///ESTRUCTURACION DE ELEMENTOS, extraer los datos que se necesitas de un objeto.
 //anterior
 let person = {
   fullname : 'Carlos',
@@ -46,16 +46,29 @@ console.log(person.fullname, person.fullage);
 let { fullname } = person;
 console.log(fullname);
 
-///OPERADOR DE PROPAGACION
+////OPERADOR DE PROPAGACION, permite unir elementos
 //ES6
 let team1 = ['oscar', 'julina', 'ricardo'];
 let team2 = ['valeria', 'yesica', 'camila'];
 let education = ['david', ...team1, ...team2];
 console.log (education);
+
+//// VAR / LET
+// Cuando se utiliza LET, el elemenoto solo esta disponible en el SCOPE, 
+// en el bloque del codigo del cual va ser llamado
+{
+  var globalVar = "Global Var";
+}
+{
+  let globlaLet = "Global Let";
+}
+console.log(globalVar);
+console.log(globlaLet);
+
 ///PROPIEDAD DE OBJETO MEJORADA
 let name3 ='carlos';
 let age3 = 32,
-//anterior
+//anterior para crear un objeto
 obj = {name: name3, age: age3};
 console.log(obj);
 //ES6
@@ -73,7 +86,13 @@ let listOfNames = names.map (function (item){
 })
 //ES6
 let listOfNames2 = names.map(item => console.log(item.name));
-//otros ejemplo
+////otros ejemplo
+//anterior
+const square2 = function(num){
+  console.log(num*num);
+}
+square2(4);
+//ES6
 const square = num => num*num;
 //estas generando una funcion que recibe 'num' y devuelve 'num*num'
 
@@ -92,7 +111,7 @@ helloPromise()
   .then(response => console.log(response))
   .catch(error => console.log(error))
 
-///CLASES tiene un constructor y un metodo
+////CLASES 
 class calculator {
   constructor(){
     this.valueA = 0;
@@ -107,11 +126,11 @@ class calculator {
 const calc = new calculator(); 
 console.log(calc.sum(2,2));
 
-///IMPORT - EXPORT  
+////IMPORT - EXPORT, importar archivos
 import { hello } from './module';
 hello();
 
-///GENERATOR
+////GENERATOR, genera valores recordando donde lo dejo la ultima vez
 function* helloWorld(){
   if (true){
     yield 'Hello';
@@ -124,4 +143,3 @@ const generatorHello = helloWorld();
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
 console.log(generatorHello.next().value);
-///////ES7

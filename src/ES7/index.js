@@ -7,7 +7,6 @@ if (numbers.includes(10)){
 }
 
 // ELEVAR AL EXPONENTE
-
 let base = 4;
 let exponente = 3;
 let result = base**exponente;
